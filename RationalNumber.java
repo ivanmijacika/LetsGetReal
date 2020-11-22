@@ -13,11 +13,6 @@ public class RationalNumber extends RealNumber{
       numerator = 0;
       denominator = 1;
     }
-    if (deno<0){
-      numerator = nume * (-1);
-      denominator = deno * (-1);
-      reduce();
-    }
     else{
       numerator = nume;
       denominator = deno;
@@ -26,7 +21,7 @@ public class RationalNumber extends RealNumber{
   }
 
   public double getValue(){
-    return (double)(getNumerator()/getDenominator());
+    return (double)getNumerator()/(double)getDenominator();
   }
 
   /**
@@ -77,6 +72,8 @@ public class RationalNumber extends RealNumber{
       a = b;
       b = c;
     }
+    if (b==0) return a;
+    if (a%b == 0) return b;
     int r = (a%b);
     while (r!=0){
       a = b;
@@ -96,6 +93,10 @@ public class RationalNumber extends RealNumber{
     int d1 = getDenominator();
     numerator = n1/gcd(n1,d1);
     denominator = d1/gcd(n1,d1);
+    if (denominator<0){
+      numerator = numerator * (-1);
+      denominator = denominator * (-1);
+    }
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
