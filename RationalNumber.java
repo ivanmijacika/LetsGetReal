@@ -24,20 +24,20 @@ public class RationalNumber extends RealNumber{
   }
 
   public double getValue(){
-    return 0.0;
+    return (double)(getNumerator()/getDenominator());
   }
 
   /**
   *@return the numerator
   */
   public int getNumerator(){
-    return 0;
+    return numerator;
   }
   /**
   *@return the denominator
   */
   public int getDenominator(){
-    return 0;
+    return denominator;
   }
   /**
   *@return a new RationalNumber that has the same numerator
