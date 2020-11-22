@@ -70,7 +70,18 @@ public class RationalNumber extends RealNumber{
   private static int gcd(int a, int b){
     /*use euclids method or a better one*/
     http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+    if (a<b){
+      int c = a;
+      a = b;
+      b = c;
+    }
+    int r = (a%b);
+    while (r!=0){
+      a = b;
+      b = r;
+      r = (a%b);
+    }
+    return b;
   }
 
   /**
