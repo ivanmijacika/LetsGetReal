@@ -16,10 +16,12 @@ public class RationalNumber extends RealNumber{
     if (deno<0){
       numerator = nume * (-1);
       denominator = deno * (-1);
+      reduce();
     }
     else{
       numerator = nume;
       denominator = deno;
+      reduce();
     }
   }
 
@@ -100,7 +102,8 @@ public class RationalNumber extends RealNumber{
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-    return null;
+    RationalNumber product = new RationalNumber(getNumerator() * other.getNumerator(), getDenominator() * other.getDenominator());
+    return product;
   }
 
   /**
